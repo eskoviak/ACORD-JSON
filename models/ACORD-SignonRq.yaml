@@ -1,0 +1,52 @@
+description: |
+  ACORD SignonRq Object
+required:
+  - signonPswd
+  - clientDt
+  - custLangPref
+  - clientApp
+  - com.csc_SessKey
+properties:
+  signonPswd:
+    description: |
+      SignonPswd aggregate.
+    type: object
+    properties:
+      custId:
+        type: object
+        properties:
+          sPName:
+            type: string
+          custLoginId:
+            type: string
+      custPswd:
+        type: object
+        properties:
+          encryptionTypeCd:
+            type: string
+          pswd:
+            type: string
+  clientDt:
+    type: 
+      - string
+      - null
+    format: date
+  custLangPref:
+    type: 
+      - string
+      - null
+  clientApp:
+    type: object
+    properties:
+      org:
+        type: 
+          - string
+          - null
+      name:
+        type: string
+      version:
+        type: 
+          - string
+          - null
+  com.csc_SessKey:
+    type: string
