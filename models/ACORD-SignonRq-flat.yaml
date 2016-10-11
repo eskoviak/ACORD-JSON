@@ -1,20 +1,36 @@
+# TODO:  Decide about abbreviations
 description: |
-  ACORD SignonRq Object.  Note:  aggregate wrappers are omitted.
+  ACORD SignonRq Object.  Note:  aggregate wrappers are omitted; structure
+  is flattened.  Also, not change to propertyCase from ACORD traditional
+  XML.
 required:
-  - signonPswd
+  - sPName
+  - custLoginId
+  - encryptionTypeCd
+  - pswd
   - clientDt
   - custLangPref
-  - clientApp
+  - org
+  - name
+  - version
   - com.csc_SessKey
 properties:
+  x-aggregate: SignonPswd
+  x-aggregate: CustId
   sPName:
-    type: string
+    type: 
+      - string
+      - null
   custLoginId:
     type: string
+  x-end-aggregate: CustId
+  x-aggregate: CustPswd
   encryptionTypeCd:
     type: string
   pswd:
     type: string
+  x-end-aggregate: CustId
+  x-end-aggregate: SignonPswd
   clientDt:
     type: 
       - string
@@ -24,18 +40,17 @@ properties:
     type: 
       - string
       - null
-  clientApp:
-    type: object
-    properties:
-      org:
-        type: 
-          - string
-          - null
-      name:
-        type: string
-      version:
-        type: 
-          - string
-          - null
+  x-aggregate: ClientApp
+  org:
+    type: 
+      - string
+      - null
+  name:
+    type: string
+  version:
+    type: 
+      - string
+      - null
+  x-end-aggregate: ClientApp
   com.csc_SessKey:
     type: string

@@ -1,0 +1,27 @@
+description: |
+  ACORD Insurance Service Request (InsuranceSvcRq) flattened and re-
+  expressed in proptertyCase.
+required:
+properties:
+  rqUID:
+    type:
+      - string
+      - null
+  x-aggregate: com.csc_PersAutoPolicyInquiryRq
+  # NOTE:  rqUID repeats from above?
+  transactionRequestDt:
+    type:
+      - string
+      - null
+    format: date
+  transactionEffectiveDt:
+    type: string
+    format: date
+  curCd:
+    type: 
+      - string
+      - null
+  x-aggregate: PersPolicy
+  
+    
+  
