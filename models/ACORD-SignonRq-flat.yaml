@@ -15,9 +15,11 @@ required:
   - version
   - com.csc_SessKey
 properties:
-  x-aggregate: SignonPswd
+  x-aggregate: SignonPswd %SIGNONENTITY
   x-aggregate: CustId
   sPName:
+    description: |
+      Service Provider Name.  To ensure uniqueness, must be a URI.
     type: 
       - string
       - null

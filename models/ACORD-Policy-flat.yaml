@@ -1,0 +1,26 @@
+description:
+  ACORD Policy aggregate; flattened and changed to propertyCase.
+
+  DEPRECATE:  Use ACORD-PersPolicy-flat.yaml
+
+required:
+properties:
+  lOBCd:
+    type: string
+  contractTerm:
+    description: |
+      This indicates the period for the policy
+    $ref: ../definitions.yaml#/definitions/ContractTerm
+  x-aggreate: QuoteInfo
+  companyQuoteNumber:
+    type: number
+  iterationNumber:
+    type: number
+  x-end-aggregate: QuoteInfo
+  x-aggregate: com.csc_ItemIdentifier
+  otherIdTypeCd:
+    type: string
+  otherIdentifier:
+    type: string
+  x-end-aggregate: com.csc_ItemIdentifier
+  

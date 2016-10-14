@@ -1,0 +1,65 @@
+description: |
+  ACORD Personal Policy Aggregrate; flattened and changed to propertyCase.
+
+  The Personal Policy aggregate is built with the %PCPOLICY entity (used by both Personal and
+  Commercial Lines, and Claims) and adds in groups that are unique to Personal Lines.
+
+  The PCPOLICY base class is a super-entity, holding all of the policy relelated aggregrates.
+  
+  ACORD Base Type:  (PersPolicy_Type) --> %PCPOLICY_NoID
+required:
+properties:
+  companyProductCd:
+    description: |
+      A company-unique code indicating the product classification of this policy.
+    type: string
+  lOBCd:
+    description: |
+      A code identifying the line of business classification.
+    type: string
+  nAICCd:
+    description: |
+      An industry code uniquely identifying an organization chartered under
+      state or provincial laws to act as an insurer. The source of this code
+      list is the NAIC and/or IBC.
+
+      As used here, this identifies the insurer with a responsibility for the
+      entire policy.
+    type: string
+  controllingStateProvCd:
+    description: |
+      A code for the state used to determine some rating factors and
+      Insurance Services Office reporting categories. The source of the
+      code list is the U.S. Postal Service.
+    type: string
+  contractTerm:
+    description: |
+      This indicates the period for the policy
+    $ref: ../definitions.yaml#/definitions/ContractTerm
+  x-aggregate: QuoteInfo
+  companyQuoteNumber:
+    type: number
+  interationNumber:
+    type: number
+  x-end-aggregate: QuoteInfo
+  x-aggregate: com.csc_ItemIdInfo
+  itemIdInfo:
+    type: array
+    items:
+      $ref: ./definitions.yaml#/definitions/itemIdInfo
+  x-end-aggregate: com.csc_ItemInfo
+  x-aggregate: com.csc_ActionInfo
+  actionCd:
+    type:
+      -string
+      -null
+  com.csc_ActionCd:
+    type:
+      -string
+      -null
+  com.csc.ActivityCd:
+    type: string
+  com.csc.TransactionSourceCd:
+    type:
+      -string
+      -null

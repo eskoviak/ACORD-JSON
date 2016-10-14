@@ -1,0 +1,12 @@
+description: |
+  CSC extension object ItemIdInfo.  Allows array of ACORD OtherIdentifier.
+required:
+  - otherIdTypeCd
+  - otherId
+properties:
+  x-aggregate: OtherIdentifier
+  otherIdTypeCd:
+    type: string
+  otherId:
+    type: string
+  x-end-aggregate: OtherIdentifier

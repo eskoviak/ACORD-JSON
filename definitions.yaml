@@ -1,0 +1,8 @@
+definitions:
+  ContractTerm:
+    $ref: ./models/ContractTerm.yaml
+  ItemIdInfo:
+    $ref: ./models/com.csc_ItemInfo.yaml
+  PersPolicy:
+    $ref: ./models/ACORD-PersPolicy-flat.yaml
+        

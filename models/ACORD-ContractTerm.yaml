@@ -1,0 +1,21 @@
+description: |
+  A duration model based on the ACORD PC ContractTerm aggregate.
+
+  The dates are expressed in ISO 2607
+required:
+  -effectiveDt
+  -expirationDt
+properties:
+  effectiveDt:
+      description: |
+        The date the duration begins.
+      type: string
+      format: date
+  expirationDt:
+      description:
+        The optional date the duration ends (null indicates currently effective).
+      type:
+        - string
+        - null
+      format: date
+  

@@ -1,27 +1,57 @@
 description: |
   ACORD Insurance Service Request (InsuranceSvcRq) flattened and re-
   expressed in proptertyCase.
+
+  This aggregate serves as a container for specific insurance service request
+  messages.  Base type: (InsuranceSvcRq_Type).
+
 required:
 properties:
   rqUID:
+    description: |
+      RequestID.  Uniquely identifies the document data stream.
     type:
       - string
       - null
   x-aggregate: com.csc_PersAutoPolicyInquiryRq
+    description: |
+      This is a CSC extension, which is based on the ACORD <PersAutoPolicyXXXRq>
+      message.
   # NOTE:  rqUID repeats from above?
   transactionRequestDt:
+    description: |
+      The date/time the request was created. This is the client date.
+
+      ACORD Source: %MSGRQINFO
     type:
       - string
       - null
     format: date
   transactionEffectiveDt:
+    description: |
+      The date on which this transaction takes effect.
+      
+      ACORD Source: %MSGRQINFO
     type: string
     format: date
   curCd:
+    description: |
+      Currency Code; based on ISO-4217.
     type: 
       - string
       - null
   x-aggregate: PersPolicy
-  
-    
-  
+  perPolicy:
+    $ref: ./definitions.yaml#/definitions/ACORD-PersPolicy-flat.yaml
+  x-end-aggregate: PersPolicy
+  x-aggregate: PersAutoLineBusiness
+  lOBCd:
+    type: string
+  x-end-aggregate: PersAutoLineBusiness
+  x-aggregate: com.csc_Context
+  com.csc_ObjectToRetrieveCd:
+    type: string
+  com.csc_Mode:
+    type: string
+  x-end-aggregate: com.csc_Context
+  x-end-aggregate: com.csc_PersAutoPolicyInquiryRq
