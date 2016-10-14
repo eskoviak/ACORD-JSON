@@ -5,4 +5,6 @@ definitions:
     $ref: ./models/com.csc_ItemInfo.yaml
   PersPolicy:
     $ref: ./models/ACORD-PersPolicy-flat.yaml
+  QuoteInfo:
+    $ref: ./models/ACORD-QuoteInfo.yaml
         

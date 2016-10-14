@@ -1,0 +1,16 @@
+description: |
+  This aggregate is used to communicate quote information.
+
+  ACORD Base Type: (QuoteInfo_Type)
+required:
+properties:
+  companyQuoteNumber:
+    description: |
+      A unique number assigned by the quoting party to this specific
+      quotation.
+    type: string
+  iterationNumber:
+    description: |
+      An identification number used to differentiate between multiple
+      iterations of an aggregate.
+    type: integer

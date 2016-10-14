@@ -36,12 +36,8 @@ properties:
     description: |
       This indicates the period for the policy
     $ref: ../definitions.yaml#/definitions/ContractTerm
-  x-aggregate: QuoteInfo
-  companyQuoteNumber:
-    type: number
-  interationNumber:
-    type: number
-  x-end-aggregate: QuoteInfo
+  quoteInfo:
+    $ref: ../definitions.yaml#/definitions/QuoteInfo
   x-aggregate: com.csc_ItemIdInfo
   itemIdInfo:
     type: array
