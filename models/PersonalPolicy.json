@@ -1,0 +1,9 @@
+{ 
+    "description" : "This is the description for this JSON File",
+    "type" : "object",
+    "properties" : {
+        "p1" : {
+            "description" : "some text",
+            "type" : "string"
+        }
+    }
